@@ -3,10 +3,10 @@ package streampb
 import (
 	"bytes"
 	"io"
-	"reflect"
 	"testing"
 	"time"
 
+	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/duration"
 )
@@ -28,7 +28,7 @@ func TestRoundtripEncodeDecode(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if !reflect.DeepEqual(&got, want) {
+	if !proto.Equal(&got, want) {
 		t.Fatalf("got: %#v want %#v", &got, want)
 	}
 
