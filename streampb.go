@@ -36,8 +36,7 @@ func (e *Encoder) Encode(msg proto.Message) error {
 	return err
 }
 
-// NewDecoder creates a streaming protobuf decoder. It currently assumes a max
-// of 64KiB for all protobuf messages.
+// NewDecoder creates a streaming protobuf decoder.
 func NewDecoder(r io.Reader) *Decoder {
 	return &Decoder{r: r}
 }
