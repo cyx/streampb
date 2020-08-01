@@ -1,7 +1,11 @@
 # streampb
 
-`streampb` is a library for streaming protobuf messages. It frames messages using
-a big endian length prefix [as described in the official docs](https://developers.google.com/protocol-buffers/docs/techniques#streaming)
+`streampb` is a library heavily inspired from recordio. It frames messages
+using [a varint](https://golang.org/pkg/encoding/binary/#Varint).
+
+The underlying techniques used are [as described in the official docs][docs].
+
+[docs]: https://developers.google.com/protocol-buffers/docs/techniques#streaming
 
 ## Getting
 

@@ -60,3 +60,15 @@ func BenchmarkDecoder(b *testing.B) {
 	}
 	b.StopTimer()
 }
+
+func BenchmarkEncoder(b *testing.B) {
+	d := ptypes.DurationProto(42 * time.Minute)
+
+	buf := new(bytes.Buffer)
+	enc := NewEncoder(buf)
+	for i := 0; i < b.N; i++ {
+		if err := enc.Encode(d); err != nil {
+			b.Fatal(err)
+		}
+	}
+}
