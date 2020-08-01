@@ -25,3 +25,7 @@ var d duration.Duration
 dec := streampub.NewDecoder(r)
 dec.Decode(&d)
 ```
+
+## Credits
+
+Special thanks to @eclesh for the work on [recordio](https://github.com/eclesh/recordio).
